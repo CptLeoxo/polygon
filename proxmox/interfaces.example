@@ -1,0 +1,48 @@
+# /etc/network/interfaces - one Proxmox node. Example addresses.
+# Repeat on every node and change the host part (.11 -> .12, .13, ...).
+
+auto lo
+iface lo inet loopback
+
+iface enp2s0f0 inet manual
+iface enp2s0f1 inet manual
+
+auto enp3s0f0
+iface enp3s0f0 inet manual
+#Ceph / cluster trunk
+
+auto enp3s0f0.998
+iface enp3s0f0.998 inet static
+        address 172.22.98.11/24
+#Ceph cluster (private) network
+
+auto enp3s0f0.999
+iface enp3s0f0.999 inet static
+        address 172.22.99.11/24
+#Ceph public network
+
+auto enp3s0f0.555
+iface enp3s0f0.555 inet static
+        address 172.31.11.11/24
+#Corosync second link
+
+auto vmbr0
+iface vmbr0 inet static
+        address 172.16.10.11/24
+        gateway 172.16.10.1
+        bridge-ports enp2s0f0
+        bridge-stp off
+        bridge-fd 0
+        up ip route add 192.168.200.0/24 via 172.16.10.2
+#Management (route to the VPN via the firewall)
+
+auto vmbr1
+iface vmbr1 inet manual
+        bridge-ports enp2s0f1
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes
+        bridge-vids 2-4094
+#Lab traffic - student VLANs (tag = student_id + 10)
+
+source /etc/network/interfaces.d/*

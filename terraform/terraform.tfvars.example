@@ -1,0 +1,12 @@
+# Copy to terraform/terraform.tfvars (git-ignored) and fill in.
+# Alternatively export TF_VAR_pm_api_token_secret=... in your shell.
+
+pm_api_url          = "https://pve01.example.local:8006/api2/json"
+pm_api_token_id     = "terraform@pve!polygon"
+pm_api_token_secret = "CHANGE_ME"
+pm_tls_insecure     = false
+
+manage_fw_vlan = true
+fw_host        = "172.16.10.2"
+fw_user        = "polygon"
+fw_parent_if   = "igb3"

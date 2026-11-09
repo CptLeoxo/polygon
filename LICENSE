@@ -1,0 +1,25 @@
+Copyright (c) 2024-2026 Kai Leon. All rights reserved.
+
+This repository is made publicly visible for viewing only.
+
+No licence or permission is granted to use, run, copy, modify, merge, publish,
+distribute, sublicense, sell, or create derivative works from this software,
+the documentation, or any part of them, whether in source or any other form,
+for any purpose - commercial or non-commercial, including use in academic
+work such as theses, dissertations, coursework, or publications - without the
+prior written permission of the copyright holder.
+
+The only rights granted are those that GitHub's Terms of Service give to other
+GitHub users for public repositories (viewing and forking on GitHub).
+
+Third-party software referenced by this project (for example Terraform, the
+Telmate Proxmox provider, DVWA, Metasploitable, FreeBSD, WireGuard) is not part
+of this work and remains under its own licence.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE
+OF THE SOFTWARE.
+
+To request permission, contact: hello.kai.leon@gmail.com

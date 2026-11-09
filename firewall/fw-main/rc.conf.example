@@ -1,0 +1,30 @@
+# /etc/rc.conf (excerpt) - main firewall. All addresses are examples.
+hostname="fw-main"
+clear_tmp_enable="YES"
+syslogd_flags="-ss"
+ntpd_enable="YES"
+ntpd_sync_on_start="YES"
+dumpdev="AUTO"
+zfs_enable="YES"
+sshd_enable="YES"
+
+# WAN, management, student trunk (VLANs are created on demand by create_vlan.sh)
+ifconfig_igb0="inet 203.0.113.2/29"
+defaultrouter="203.0.113.1"
+ifconfig_igb1="inet 172.16.10.2/24"
+ifconfig_igb3="up"
+
+# Admin networks reachable via the management gateway
+static_routes="admin_a admin_b"
+route_admin_a="-net 192.168.10.0/24 172.16.10.1"
+route_admin_b="-net 192.168.20.0/24 172.16.10.1"
+
+gateway_enable="YES"
+
+pf_enable="YES"
+pf_rules="/etc/pf.conf"
+pflog_enable="YES"
+pflog_logfile="/var/log/pflog"
+
+wireguard_enable="YES"
+wireguard_interfaces="wg0"

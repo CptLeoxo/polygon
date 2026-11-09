@@ -1,0 +1,18 @@
+# Lab 1 - web application attacks (DVWA: SQL injection, IDOR, XSS)
+# Per student:  10.<student_id>.1.1 = Kali, 10.<student_id>.1.2 = DVWA
+name: lab1
+lab_id: 1
+nodes: [pve01, pve02, pve03]   # Proxmox node names; students are spread round-robin
+
+vms:
+  - id: 1
+    name: kali
+    template: Student32-template   # must match a template name in Proxmox
+    memory: 4096
+    disk: { type: scsi, size: 32, storage: ceph }
+
+  - id: 2
+    name: dvwa
+    template: DVWA-template
+    memory: 2048
+    disk: { type: scsi, size: 32, storage: ceph }

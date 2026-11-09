@@ -1,0 +1,18 @@
+# /usr/local/etc/wireguard/wg0.conf  (FreeBSD, package wireguard-tools)
+# Keys are generated on the host and NEVER committed:
+#   umask 077; wg genkey | tee private.key | wg pubkey > public.key
+
+[Interface]
+Address    = 192.168.200.1/24
+ListenPort = 51820
+PrivateKey = <contents of private.key on this host>
+
+[Peer]
+# fw-client
+PublicKey  = <fw-client public key>
+AllowedIPs = 192.168.200.2/32
+
+[Peer]
+# administrator laptop
+PublicKey  = <admin public key>
+AllowedIPs = 192.168.200.10/32

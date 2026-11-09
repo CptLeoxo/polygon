@@ -1,0 +1,29 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+tfplan
+crash.log
+*.auto.tfvars
+terraform.tfvars
+
+# Generated labs (rendered per request)
+terraform/labs/
+
+# Secrets
+*.key
+*.pem
+.env
+wg0.conf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# Editors / OS
+.obsidian/
+.DS_Store
+*.swp

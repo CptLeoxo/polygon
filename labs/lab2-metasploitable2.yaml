@@ -1,0 +1,18 @@
+# Lab 2 - Metasploitable 2
+# Per student:  10.<student_id>.2.1 = Kali, 10.<student_id>.2.2 = Metasploitable 2
+name: lab2
+lab_id: 2
+nodes: [pve01, pve02, pve03]
+
+vms:
+  - id: 1
+    name: kali
+    template: Student32-template
+    memory: 4096
+    disk: { type: scsi, size: 32, storage: ceph }
+
+  - id: 2
+    name: meta2
+    template: Meta2-template
+    memory: 2048
+    disk: { type: ide, size: 32, storage: ceph }
